@@ -641,7 +641,13 @@ function stationClick(d) {
   // UHSLC info and data links
   var ttipSec2 = d3.select("#tooltip")
     .append("div").classed("tooltip-section", true);
-      ttipSec2.append("p").text("UHSLC ID: " + ('000' + d.properties.uhslc_id).slice(-3));
+      if (d.properties.uh_station) { 
+          ttipSec2.append("p").append("a")
+          .attr("href", "http://uhslc.soest.hawaii.edu/stations/?stn=" + ("00" + d.properties.uhslc_id).slice(-3))
+          .text("UHSLC ID: " + ('000' + d.properties.uhslc_id).slice(-3));
+      } else {
+          ttipSec2.append("p").text("UHSLC ID: " + ('000' + d.properties.uhslc_id).slice(-3));
+      }
       var left = ttipSec2.append("div");
         left.append("p").html("Data:&nbsp;&nbsp;<br>")
       var right = ttipSec2.append("div");
