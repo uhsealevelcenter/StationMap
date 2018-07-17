@@ -668,7 +668,8 @@ function stationClick(d) {
         // ttipSec3.append("p").text("GLOSS ID: " + d.properties.gloss_id);
         ttipSec3.append("p").text("GLOSS ID: " + ('000' + d.properties.gloss_id).slice(-3));
         ttipSec3.append("p").append("a").classed("tooltip-link", true)
-          .attr("href", "http://www.gloss-sealevel.org/station_handbook/stations/" + + d.properties.gloss_id + "/")
+          .attr("href", "http://www.gloss-sealevel.org/gloss-station-handbook")
+          // .attr("href", "http://www.gloss-sealevel.org/station_handbook/stations/" + + d.properties.gloss_id + "/")
           .attr("target", "_blank")
           .text("Station Handbook");
   } // end if has gloss id
